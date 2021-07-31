@@ -8,10 +8,10 @@ part 'event.g.dart';
 @JsonSerializable(createToJson: false)
 class Event {
   @JsonKey(name: 'Action')
-  final String action;
+  final String? action;
 
   @JsonKey(fromJson: requestFromJson)
-  final Request body;
+  final Request? body;
 
   const Event({
     this.action,

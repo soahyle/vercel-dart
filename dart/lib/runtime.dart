@@ -7,8 +7,8 @@ import 'package:vercel_dart/src/utils/response_to_object.dart';
 void handle(shelf.Handler handler, {String name = 'bootstrap'}) {
   // ignore: prefer_function_declarations_over_variables
   final aws.Handler<Event> _handler = (context, event) async {
-    final res = await handler(event.body);
-    return aws.InvocationResult(context.requestId, await responseToObject(res));
+    final res = await handler(event.body!);
+    return aws.InvocationResult(context.requestId!, await responseToObject(res));
   };
 
   aws.Runtime()
