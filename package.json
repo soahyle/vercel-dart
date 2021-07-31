@@ -15,6 +15,7 @@
     "types"
   ],
   "scripts": {
+    "test": "echo test",
     "prebuild": "rimraf dist",
     "build": "node build.js",
     "postbuild": "cpy src '!**/*.ts' dist",
