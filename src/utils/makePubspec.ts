@@ -6,11 +6,14 @@ export function makePubspec(
 ): string {
   const data = (yaml.load(input) as any) ?? {}
 
-  return yaml.dump({
+  const yamlDump = yaml.dump({
     ...data,
     dependencies: {
       ...(data?.dependencies ?? {}),
       vercel_dart: pkg,
     },
   })
+
+  console.log(yamlDump)
+  return yamlDump
 }

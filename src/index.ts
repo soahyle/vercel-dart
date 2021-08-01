@@ -86,6 +86,8 @@ async function build({
     stdio: 'inherit',
     shell: '/bin/bash',
   })
+  
+  console.log(entrypointFilePath)
 
   const extraFiles = await gatherExtraFiles(
     config.includeFiles,
